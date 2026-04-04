@@ -36,3 +36,15 @@ export async function updateList(nome, descricao, id){
     console.log('Erro ao atualizar', err.stack)
   }
 }
+
+export async function getList() {
+  const query = ('SELECT * FROM lista')
+  try {
+    const res = await pool.query(query)
+    console.log('Listas do banco: ', res.rows)
+  }
+  catch(err) {
+    console.log('Erro ao pegar listas', err.stack)
+  }
+}
+
