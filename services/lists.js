@@ -24,3 +24,15 @@ export async function deleteList(id){
     console.log('Erro ao deletar', err.stack)
   }
 }
+
+export async function updateList(nome, descricao, id){
+  const query = ('UPDATE lista SET nome = $1, descricao = $2 WHERE id = $3 RETURNING *')
+  const values = [nome, descricao, id]
+  try {
+    const res = await pool.query(query, values)
+    console.log('Lista atualizada: ', res.rows[0])
+  }
+  catch(err) {
+    console.log('Erro ao atualizar', err.stack)
+  }
+}
