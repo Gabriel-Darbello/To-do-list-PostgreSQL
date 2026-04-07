@@ -40,7 +40,7 @@ export async function updateTask(nome, descricao, concluida , id) {
 }
 
 export async function getTask(listaID) {
-  const query = ('SELECT * FROM tarefas WHERE lista_id = $1')
+  const query = ('SELECT t1.nome AS lista, t2.nome AS tarefa,t2.descricao AS descricao_tarefa, t2.concluida FROM lista AS t1 JOIN tarefas AS t2 ON t1.id = t2.lista_id WHERE t1.id = $1;');
   const values = [listaID]
   try {
     const res = await pool.query(query, values)
