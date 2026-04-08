@@ -9,4 +9,11 @@ export default defineConfig([
     extends: ['js/recommended'],
     languageOptions: { globals: globals.node },
   },
+
+  {
+    files: ['**/*.{js,mjs,cjs}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    languageOptions: { globals: globals.browser },
+  }
 ]);

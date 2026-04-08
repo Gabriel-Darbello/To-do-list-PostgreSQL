@@ -42,6 +42,7 @@ export async function getList() {
   try {
     const res = await pool.query(query)
     console.log('Listas do banco: ', res.rows)
+    return res.rows
   }
   catch(err) {
     console.log('Erro ao pegar listas', err.stack)

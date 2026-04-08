@@ -1,68 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>To-do List</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To-do List</title>
+  </head>
+  <body>
+    <main class="app-wrapper">
+      <section id="lista-container" class="card">
+        <header>
+          <h1>Minhas Listas</h1>
+        </header>
 
-  <main class="app-wrapper">
-    <section id="lista-container" class="card">
-      <header>
-        <h1>Minhas Listas</h1>
-      </header>
+        <ul class="item-list">
+        </ul>
 
-      <ul class="item-list">
-        <li>
-          <span class="item-text">Lista 1</span>
-          <div class="actions">
-            <button class="btn-edit" title="Editar">✎</button>
-            <button class="btn-delete" title="Excluir">✕</button>
-          </div>
-        </li>
-        <li>
-          <span class="item-text">Lista 2</span>
-          <div class="actions">
-            <button class="btn-edit">✎</button>
-            <button class="btn-delete">✕</button>
-          </div>
-        </li>
-      </ul>
+        <form id="form-nova-lista" class="todo-form">
+          <h2>Nova Lista</h2>
+          <input type="text" placeholder="Nome da lista" required>
+          <textarea placeholder="Descrição curta..."></textarea>
+          <button type="submit" class="btn-main">Criar Lista</button>
+        </form>
+      </section>
 
-      <form id="form-nova-lista" class="todo-form">
-        <h2>Nova Lista</h2>
-        <input type="text" placeholder="Nome da lista" required>
-        <textarea placeholder="Descrição curta..."></textarea>
-        <button type="submit" class="btn-main">Criar Lista</button>
-      </form>
-    </section>
+      <section id="tarefa-container" class="card" style="display: none;">
+        <header>
+          <button class="btn-back">← Voltar</button>
+          <h1>Lista 1</h1>
+        </header>
 
-    <section id="tarefa-container" class="card" style="display: none;">
-      <header>
-        <button class="btn-back">← Voltar</button>
-        <h1>Lista 1</h1>
-      </header>
+        <ul class="item-list">
+          <li class="task-item">
+            <label>
+              <input type="checkbox">
+              <span class="task-text">Tarefa 1</span>
+            </label>
+            <button class="btn-delete-small">✕</button>
+          </li>
+        </ul>
 
-      <ul class="item-list">
-        <li class="task-item">
-          <label>
-            <input type="checkbox">
-            <span class="task-text">Tarefa 1</span>
-          </label>
-          <button class="btn-delete-small">✕</button>
-        </li>
-      </ul>
-
-      <form id="form-nova-tarefa" class="todo-form">
-        <h2>Nova Tarefa</h2>
-        <input type="text" placeholder="O que precisa ser feito?" required>
-        <input type="text" placeholder="Detalhes (opcional)">
-        <button type="submit" class="btn-main">Adicionar</button>
-      </form>
-    </section>
-  </main>
-
-</body>
-</html>
+        <form id="form-nova-tarefa" class="todo-form">
+          <h2>Nova Tarefa</h2>
+          <input type="text" placeholder="O que precisa ser feito?" required>
+          <input type="text" placeholder="Detalhes (opcional)">
+          <button type="submit" class="btn-main">Adicionar</button>
+        </form>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+  </html>
